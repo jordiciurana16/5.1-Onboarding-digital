@@ -1,5 +1,9 @@
-<div *ngFor="let step of steps">
-  <img [src]="step.image" />
-  <h3>{{ step.title }}</h3>
-  <span>{{ step.description }}</span>
-</div>
+<section>
+  <article *ngFor="let step of steps">
+    <div><img [src]="step.image" [style.background]="step.bgcolor" /></div>
+    <div>
+      <h3>{{ step.title }}</h3>
+      <span>{{ step.description }}</span>
+    </div>
+  </article>
+</section>
