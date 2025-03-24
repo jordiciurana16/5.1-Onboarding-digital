@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { StepsService } from '../../steps.service';
-import { ISteps } from '../../i-steps';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ISteps } from '../../i-steps';
 
 @Component({
   selector: 'app-scene',
@@ -9,11 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './scene.component.html',
   styleUrl: './scene.component.scss',
 })
-export class SceneComponent implements OnInit {
-  steps: ISteps[] = [];
-  constructor(private service: StepsService) {}
-
-  ngOnInit(): void {
-    this.steps = this.service.steps;
-  }
+export class SceneComponent {
+  @Input() steps: ISteps[] = [];
 }
