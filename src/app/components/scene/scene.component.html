@@ -1,26 +1,28 @@
-<section *ngFor="let step of steps; let i = index">
-  <article>
-    <div><img [src]="step.image" [style.background]="step.bgcolor" /></div>
-    <div>
-      <h3>{{ step.title }}</h3>
-      <span>{{ step.description }}</span>
-      <footer>
-        <h6>...</h6>
-        <nav>
-          <button
-            [style.visibility]="previousButtonVisibility"
-            (click)="previousUser()"
-          >
-            <ng-icon name="bootstrapArrowLeft" />
-          </button>
-          <button
-            [style.visibility]="nextButtonVisibility"
-            (click)="nextUser()"
-          >
-            <ng-icon name="bootstrapArrowRight" />
-          </button>
-        </nav>
-      </footer>
-    </div>
-  </article>
+<section>
+  <ng-container *ngFor="let step of steps; let i = index">
+    <article *ngIf="i === currentStep - 1">
+      <div><img [src]="step.image" [style.background]="step.bgcolor" /></div>
+      <div>
+        <h3>{{ step.title }}</h3>
+        <span>{{ step.description }}</span>
+        <footer>
+          <h6>...</h6>
+          <nav>
+            <button
+              [style.visibility]="previousButtonVisibility"
+              (click)="previousUser()"
+            >
+              <ng-icon name="bootstrapArrowLeft" />
+            </button>
+            <button
+              [style.visibility]="nextButtonVisibility"
+              (click)="nextUser()"
+            >
+              <ng-icon name="bootstrapArrowRight" />
+            </button>
+          </nav>
+        </footer>
+      </div>
+    </article>
+  </ng-container>
 </section>

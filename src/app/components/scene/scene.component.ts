@@ -33,11 +33,9 @@ export class SceneComponent {
 
   previousUser() {
     this.currentStep--;
-    console.log(this.currentStep);
   }
 
   nextUser() {
     this.currentStep++;
-    console.log(this.currentStep);
   }
 }
