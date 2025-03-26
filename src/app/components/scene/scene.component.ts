@@ -1,10 +1,17 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  QueryList,
+  ViewChildren,
+  AfterViewInit,
+} from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import {
   bootstrapArrowLeft,
   bootstrapArrowRight,
 } from '@ng-icons/bootstrap-icons';
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ISteps } from '../../i-steps';
 
 @Component({
